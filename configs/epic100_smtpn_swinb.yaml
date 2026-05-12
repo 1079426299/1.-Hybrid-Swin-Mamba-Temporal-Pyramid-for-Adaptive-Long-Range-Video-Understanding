@@ -1,0 +1,28 @@
+seed: 42
+dataset:
+  name: csv
+  train_csv: data/epic100_train.csv
+  val_csv: data/epic100_val.csv
+  num_classes: 3806
+  frames: 32
+  height: 224
+  width: 224
+  channels: 3
+model:
+  name: smtpn
+  num_classes: 3806
+  embed_dims: [96, 192, 384, 768]
+  mecam_state_dim: 64
+  pyramid_levels: [1, 2, 3]
+  consistency_weight: 0.1
+training:
+  epochs: 80
+  batch_size: 4
+  num_workers: 8
+  lr: 0.0005
+  weight_decay: 0.05
+  amp: true
+  clip_grad_norm: 1.0
+evaluation:
+  batch_size: 4
+  num_workers: 8

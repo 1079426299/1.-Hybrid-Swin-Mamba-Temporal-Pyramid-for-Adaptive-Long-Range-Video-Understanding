@@ -1,0 +1,27 @@
+seed: 42
+dataset:
+  name: dummy
+  num_classes: 10
+  num_samples: 32
+  frames: 16
+  height: 112
+  width: 112
+  channels: 3
+model:
+  name: smtpn
+  num_classes: 10
+  embed_dims: [32, 64, 128, 256]
+  mecam_state_dim: 32
+  pyramid_levels: [1, 2, 3]
+  consistency_weight: 0.1
+training:
+  epochs: 1
+  batch_size: 2
+  num_workers: 0
+  lr: 0.001
+  weight_decay: 0.05
+  amp: false
+  clip_grad_norm: 1.0
+evaluation:
+  batch_size: 2
+  num_workers: 0
